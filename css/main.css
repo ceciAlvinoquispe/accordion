@@ -1,0 +1,125 @@
+
+body{
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	background: #ddd url(../images/bg.jpg) repeat top left;
+	font-weight: 400;
+	font-size: 15px;
+	color: #333;
+}
+a{
+	color: #555;
+	text-decoration: none;
+}
+.box-container {
+	width: 685px;
+	margin: 20px auto;
+	overflow: hidden;
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+	border: 7px solid rgba(255,255,255,0.6);
+}
+.box-container figure {
+  position: absolute;
+	top: 0;
+	left: 50px;
+	width: 335px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
+	-webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.box-container > figure {
+    position: relative;
+	left: 0 !important;
+}
+.box-container img {
+	display: block;
+	width: 100%;
+}
+.box-container input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+  opacity: 0;
+	z-index: 100;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.box-container input:checked{
+	width: 5px;
+	left: auto;
+	right: 0px;
+}
+.box-container input:checked ~ figure {
+	-webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+	left: 335px;
+}
+.box-container figcaption {
+	width: 100%;
+	height: 100%;
+	background: rgba(87, 73, 81, 0.1);
+	position: absolute;
+	top: 0px;
+	-webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.box-container figcaption span {
+	position: absolute;
+	top: 40%;
+	margin-top: -30px;
+	right: 20px;
+	left: 20px;
+	overflow: hidden;
+	text-align: center;
+	background: rgba(87, 73, 81, 0.3);
+	line-height: 20px;
+	font-size: 18px;
+  opacity: 0;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-weight: 700;
+	padding: 20px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+} 
+.box-container input:checked + figcaption,
+.box-container input:checked:hover + figcaption{
+	background: rgba(87, 73, 81, 0);
+}
+.box-container input:checked + figcaption span {
+	-webkit-transition: all 0.4s ease-in-out 0.5s;
+  -moz-transition: all 0.4s ease-in-out 0.5s;
+  -o-transition: all 0.4s ease-in-out 0.5s;
+  -ms-transition: all 0.4s ease-in-out 0.5s;
+  transition: all 0.4s ease-in-out 0.5s;
+	opacity: 1;
+	
+	top: 50%;
+}
+.box-container #ia-selector-last:checked + figcaption span {
+	-webkit-transition-delay: 0.3s;
+	-moz-transition-delay: 0.3s;
+	-o-transition-delay: 0.3s;
+	-ms-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+.box-container input:hover + figcaption {
+	background: rgba(87, 73, 81, 0.03);
+}
+.box-container input:checked ~ figure input{
+    z-index: 1;
+}
